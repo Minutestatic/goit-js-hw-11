@@ -1,7 +1,7 @@
 import axios from 'axios';
 import notiflix from 'notiflix';
 
-async function getImg(photos) {
+async function getImg(photos, page) {
   const BASE_URL = 'https://pixabay.com/api/';
   const API_KEY = '36013837-3d9990b0614e4049bfc16c19d';
   const params = new URLSearchParams({
@@ -11,6 +11,7 @@ async function getImg(photos) {
     orientation: 'horizontal',
     safesearch: 'true',
     per_page: 40,
+    page: page,
   });
 
   try {

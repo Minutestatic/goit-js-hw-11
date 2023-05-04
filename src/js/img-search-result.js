@@ -11,7 +11,7 @@ function imgSearchResult(img) {
         downloads,
       }) => `
           <div class="photo-card">
-            <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+            <img class="photo-img" src="${webformatURL}" alt="${tags} width="350" loading="lazy"/>
             <div class="info">
               <p class="info-item">
                 <b>Likes:</b> ${likes}
