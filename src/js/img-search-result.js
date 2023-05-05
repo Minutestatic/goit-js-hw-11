@@ -13,7 +13,7 @@ function imgSearchResult(img) {
         `
        <a class="simple-lightbox" href="${largeImageURL}">
         <div class="photo-card">
-            <img class="photo-img" src="${webformatURL}" alt="${tags} width="350" loading="lazy"/>
+            <img class="photo-img" src="${webformatURL}" alt="${tags}" width="350" loading="lazy"/>
             <div class="info">
               <p class="info-item">
                 <b>Likes</b><br>${likes}
