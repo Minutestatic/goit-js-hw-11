@@ -115,6 +115,7 @@ p {
 .info-item {
   font-size: 14px;
   text-align: center;
+  color: initial;
 }
 
 .load-more {
@@ -141,4 +142,8 @@ p {
 }
 .container {
   padding: 20px;
+}
+
+.simple-lightbox {
+  text-decoration: none;
 }

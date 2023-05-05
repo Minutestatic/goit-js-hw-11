@@ -1,6 +1,8 @@
 import Notiflix from 'notiflix';
+import SimpleLightbox from 'simplelightbox';
 import { getImg } from './js/http-requests';
 import { imgSearchResult } from './js/img-search-result';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import './css/styles.css';
 
 const form = document.querySelector('#search-form');
@@ -11,6 +13,7 @@ form.addEventListener('submit', onSubmitForm);
 loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 
 let currentPage = 1;
+let simpleLightbox = new SimpleLightbox('.gallery a');
 
 function onSubmitForm(evt) {
   evt.preventDefault();
@@ -22,6 +25,7 @@ function onSubmitForm(evt) {
     .then(images => {
       gallery.innerHTML = imgSearchResult(images.hits);
 
+      simpleLightbox.refresh();
       loadMoreBtn.classList.add('is-hidden');
     })
     .catch(error => {
@@ -39,6 +43,8 @@ function onLoadMoreBtnClick(evt) {
   getImg(searchQuery, currentPage)
     .then(images => {
       gallery.insertAdjacentHTML('beforeend', imgSearchResult(images.hits));
+
+      simpleLightbox.refresh();
 
       const totalHits = images.totalHits;
       Notiflix.Notify.info(`Hooray! We found ${images.totalHits} images.`);
