@@ -49,9 +49,9 @@ function onLoadMoreBtnClick(evt) {
       const totalHits = images.totalHits;
       Notiflix.Notify.info(`Hooray! We found ${images.totalHits} images.`);
 
-      if (totalHits <= currentPage * images.hits.length) {
+      if (gallery.children.length >= totalHits) {
         Notiflix.Notify.info(
-          `We're sorry, but you've reached the end of search results.`
+          "We're sorry, but you've reached the end of search results"
         );
         loadMoreBtn.classList.remove('is-hidden');
       }
